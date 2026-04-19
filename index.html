@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Darkness - Bot Status & Community</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Magical Mouse Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Animated Background -->
+    <div class="background-container">
+        <div class="topographic-bg"></div>
+        <div class="blur-grid"></div>
+        <div class="color-picker-popin" id="colorPickerPopin">
+            <input type="color" id="bgColorPicker" value="#0a0a0f" title="Change Background Color">
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo" id="logo">
+                <span class="logo-icon">🌑</span>
+                <span class="logo-text">Team Darkness</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#stats" class="nav-link">Stats</a></li>
+                <li><a href="updates.html" class="nav-link">Updates</a></li>
+                <li><a href="#twitch" class="nav-link">Twitch</a></li>
+            </ul>
+            <div class="nav-right">
+                <button class="lang-switch" id="langSwitch" title="Switch Language">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'%3E%3Crect fill='%23012169' width='640' height='480'/%3E%3Cpath fill='%23FFF' d='M0 0L640 0L640 480L0 480z'/%3E%3C/svg%3E" alt="EN" class="flag-icon">
+                </button>
+                <button class="theme-toggle" id="themeToggle" title="Toggle Theme">
+                    <span class="sun">☀️</span>
+                    <span class="moon">🌙</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dynamic Island -->
+    <div class="dynamic-island" id="dynamicIsland">
+        <div class="island-content">
+            <div class="island-left">
+                <div class="bot-status">
+                    <span class="status-indicator" id="botStatusIndicator"></span>
+                    <span class="status-text" id="botStatusText">Loading...</span>
+                </div>
+                <div class="version-badge" id="versionBadge">v1.0.0</div>
+            </div>
+            <div class="island-right">
+                <div class="news-ticker" id="newsTicker">
+                    <span class="ticker-text">Welcome to Team Darkness!</span>
+                </div>
+                <div class="easter-egg-indicator" id="easterEggIndicator" title="Secret unlocked!">
+                    ✨
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title animate-fade-in">
+                    Welcome to <span class="gradient-text">Team Darkness</span>
+                </h1>
+                <p class="hero-subtitle animate-fade-in-delay">
+                    Advanced Discord Bot • Community Hub • Twitch Integration
+                </p>
+                <div class="live-status" id="liveStatus">
+                    <span class="live-dot"></span>
+                    <span class="live-text">NOW OFFLINE</span>
+                </div>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary">Invite Bot</a>
+                    <a href="#" class="btn btn-secondary">Join Server</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Cards Section -->
+        <section id="stats" class="stats-section">
+            <h2 class="section-title">Bot Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-card glow-card">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-value" id="serverCount">0</div>
+                    <div class="stat-label">Servers</div>
+                </div>
+                <div class="stat-card glow-card">
+                    <div class="stat-icon">👤</div>
+                    <div class="stat-value" id="userCount">0</div>
+                    <div class="stat-label">Users</div>
+                </div>
+                <div class="stat-card glow-card">
+                    <div class="stat-icon">🎮</div>
+                    <div class="stat-value" id="commandCount">0</div>
+                    <div class="stat-label">Commands Used</div>
+                </div>
+                <div class="stat-card glow-card">
+                    <div class="stat-icon">⚡</div>
+                    <div class="stat-value" id="uptime">0d 0h</div>
+                    <div class="stat-label">Uptime</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Twitch Integration Section -->
+        <section id="twitch" class="twitch-section">
+            <h2 class="section-title">Twitch Integration</h2>
+            <div class="twitch-container">
+                <div class="twitch-card glow-card">
+                    <div class="twitch-header">
+                        <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/logo.png" alt="Twitch" class="twitch-logo">
+                        <span class="twitch-live-badge" id="twitchLiveBadge">OFFLINE</span>
+                    </div>
+                    <div class="twitch-content" id="twitchContent">
+                        <p>Connect your Twitch account to get notified when you go live!</p>
+                        <button class="btn btn-twitch">Connect Twitch</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="#home" class="bottom-nav-item active">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-label">Home</span>
+        </a>
+        <a href="#stats" class="bottom-nav-item">
+            <span class="nav-icon">📊</span>
+            <span class="nav-label">Stats</span>
+        </a>
+        <a href="updates.html" class="bottom-nav-item">
+            <span class="nav-icon">📰</span>
+            <span class="nav-label">Updates</span>
+        </a>
+        <a href="#twitch" class="bottom-nav-item">
+            <span class="nav-icon">🎮</span>
+            <span class="nav-label">Twitch</span>
+        </a>
+        <a href="#" class="bottom-nav-item admin-only" id="adminPanel" style="display: none;">
+            <span class="nav-icon">⚙️</span>
+            <span class="nav-label">Admin</span>
+        </a>
+    </nav>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text animated-text" id="footerText">
+                Made with ❤️ for the Team Darkness community.
+            </p>
+            <p class="footer-version">Version <span id="footerVersion">1.0.0</span></p>
+        </div>
+    </footer>
+
+    <!-- Easter Egg Modal -->
+    <div class="modal easter-egg-modal" id="easterEggModal">
+        <div class="modal-content">
+            <h2>🎉 Secret Unlocked!</h2>
+            <p>You found the Easter Egg!</p>
+            <div class="easter-egg-content">
+                <p>Thanks for exploring! Here's a special message from the team:</p>
+                <p class="special-message">"Darkness is not the absence of light, but the courage to shine in the shadows."</p>
+            </div>
+            <button class="btn btn-close" onclick="closeEasterEgg()">Close</button>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

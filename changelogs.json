@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "version": "1.0.0",
+        "date": "2024-01-15",
+        "type": "feature",
+        "title": "Website Launch",
+        "description": "Welcome to the Team Darkness Bot website! This is the initial release with all core features including Dynamic Island, magical mouse cursor, animated background, and more.",
+        "source": "web"
+    },
+    {
+        "id": 2,
+        "version": "1.0.0",
+        "date": "2024-01-15",
+        "type": "feature",
+        "title": "Dynamic Island Integration",
+        "description": "Added Dynamic Island showing bot status, version, and news ticker. The island displays real-time bot information and syncs with the bot status.",
+        "source": "bot"
+    },
+    {
+        "id": 3,
+        "version": "1.0.0",
+        "date": "2024-01-14",
+        "type": "improvement",
+        "title": "Stats Cards Rework",
+        "description": "Complete rework of stats cards with smooth glow animation around each card. Numbers now animate when scrolling into view.",
+        "source": "web"
+    },
+    {
+        "id": 4,
+        "version": "1.0.0",
+        "date": "2024-01-14",
+        "type": "feature",
+        "title": "Easter Egg Implementation",
+        "description": "Added secret Easter egg by clicking the logo 7 times. Unlock a special message and confetti celebration!",
+        "source": "web"
+    },
+    {
+        "id": 5,
+        "version": "0.9.5",
+        "date": "2024-01-12",
+        "type": "improvement",
+        "title": "Twitch Integration Enhancements",
+        "description": "Improved Twitch integration with better live status detection and enhanced connection flow.",
+        "source": "bot"
+    },
+    {
+        "id": 6,
+        "version": "0.9.5",
+        "date": "2024-01-11",
+        "type": "bugfix",
+        "title": "Fixed Mouse Cursor on Mobile",
+        "description": "Resolved issues with the magical mouse cursor on mobile devices. Cursor now properly hides on touch devices.",
+        "source": "web"
+    },
+    {
+        "id": 7,
+        "version": "0.9.0",
+        "date": "2024-01-10",
+        "type": "feature",
+        "title": "Dark/Light Mode Toggle",
+        "description": "Added smooth animation between dark and light mode. Theme preference is saved in localStorage.",
+        "source": "web"
+    },
+    {
+        "id": 8,
+        "version": "0.9.0",
+        "date": "2024-01-09",
+        "type": "improvement",
+        "title": "Bottom Navigation Rework",
+        "description": "Complete redesign of bottom navigation with improved animations and active state indicators.",
+        "source": "web"
+    },
+    {
+        "id": 9,
+        "version": "0.8.5",
+        "date": "2024-01-08",
+        "type": "security",
+        "title": "Admin Panel Security",
+        "description": "Enhanced admin panel security with GitHub username verification for accessing content management features.",
+        "source": "web"
+    },
+    {
+        "id": 10,
+        "version": "0.8.0",
+        "date": "2024-01-05",
+        "type": "feature",
+        "title": "Updates & Changelogs Page",
+        "description": "New dedicated page for updates, news, and changelogs. Includes easy-to-use admin panel for adding content.",
+        "source": "web"
+    }
+]

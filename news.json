@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "title": "Welcome to Team Darkness!",
+        "date": "2024-01-15",
+        "category": "announcement",
+        "content": "We're excited to launch our new website! This marks a new chapter for Team Darkness. Our bot now has a beautiful home on the web with features like Dynamic Island, animated backgrounds, magical mouse cursor, and much more. Explore the site, check out the stats, and don't forget to look for the Easter egg! Thank you for being part of our community.",
+        "image": null
+    },
+    {
+        "id": 2,
+        "title": "Community Event Coming Soon",
+        "date": "2024-01-12",
+        "category": "event",
+        "content": "Get ready for our first community event! We're planning something special for all Team Darkness members. Stay tuned for more details including date, time, and activities. There will be prizes, giveaways, and lots of fun. Make sure you're in our Discord server to not miss any announcements!",
+        "image": null
+    },
+    {
+        "id": 3,
+        "title": "Bot Reaches 5000 Users!",
+        "date": "2024-01-10",
+        "category": "community",
+        "content": "We've hit an amazing milestone - 5000 users! Thank you all for your support and trust in Team Darkness Bot. This wouldn't have been possible without our wonderful community. As a thank you, we're working on exciting new features that will be rolled out in the coming weeks.",
+        "image": null
+    },
+    {
+        "id": 4,
+        "title": "Twitch Integration Update",
+        "date": "2024-01-08",
+        "category": "update",
+        "content": "We've enhanced our Twitch integration! Now you can connect your Twitch account directly through the website and get notified when your favorite streamers go live. The integration includes improved status detection and a smoother connection flow. Check out the Twitch section to connect your account today!",
+        "image": null
+    }
+]
