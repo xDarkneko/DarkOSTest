@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Updates & Changelogs - Team Darkness</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="updates.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Magical Mouse Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Animated Background -->
+    <div class="background-container">
+        <div class="topographic-bg"></div>
+        <div class="blur-grid"></div>
+        <div class="color-picker-popin" id="colorPickerPopin">
+            <input type="color" id="bgColorPicker" value="#0a0a0f" title="Change Background Color">
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo" id="logo">
+                <span class="logo-icon">🌑</span>
+                <span class="logo-text">Team Darkness</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#stats" class="nav-link">Stats</a></li>
+                <li><a href="updates.html" class="nav-link active">Updates</a></li>
+                <li><a href="index.html#twitch" class="nav-link">Twitch</a></li>
+            </ul>
+            <div class="nav-right">
+                <button class="lang-switch" id="langSwitch" title="Switch Language">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'%3E%3Crect fill='%23012169' width='640' height='480'/%3E%3Cpath fill='%23FFF' d='M0 0L640 0L640 480L0 480z'/%3E%3C/svg%3E" alt="EN" class="flag-icon">
+                </button>
+                <button class="theme-toggle" id="themeToggle" title="Toggle Theme">
+                    <span class="sun">☀️</span>
+                    <span class="moon">🌙</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dynamic Island -->
+    <div class="dynamic-island" id="dynamicIsland">
+        <div class="island-content">
+            <div class="island-left">
+                <div class="bot-status">
+                    <span class="status-indicator" id="botStatusIndicator"></span>
+                    <span class="status-text" id="botStatusText">Loading...</span>
+                </div>
+                <div class="version-badge" id="versionBadge">v1.0.0</div>
+            </div>
+            <div class="island-right">
+                <div class="news-ticker" id="newsTicker">
+                    <span class="ticker-text">Latest Updates & Changelogs!</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content updates-page">
+        <!-- Page Header -->
+        <section class="page-header">
+            <h1 class="page-title">
+                <span class="gradient-text">Updates & Changelogs</span>
+            </h1>
+            <p class="page-subtitle">Stay up to date with the latest improvements and features</p>
+            
+            <!-- Tab Switcher -->
+            <div class="tab-switcher">
+                <button class="tab-btn active" data-tab="changelogs">
+                    📝 Changelogs
+                </button>
+                <button class="tab-btn" data-tab="news">
+                    📰 News
+                </button>
+            </div>
+        </section>
+
+        <!-- Changelogs Section -->
+        <section id="changelogs" class="content-section active">
+            <div class="changelogs-container">
+                <!-- Changelog items will be dynamically loaded from changelogs.json -->
+                <div class="changelog-list" id="changelogList">
+                    <!-- Placeholder while loading -->
+                    <div class="loading-state">
+                        <div class="spinner"></div>
+                        <p>Loading changelogs...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section id="news" class="content-section">
+            <div class="news-container">
+                <!-- News items will be dynamically loaded from news.json -->
+                <div class="news-list" id="newsList">
+                    <!-- Placeholder while loading -->
+                    <div class="loading-state">
+                        <div class="spinner"></div>
+                        <p>Loading news...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Admin Panel (Hidden by default) -->
+        <section id="adminPanel" class="admin-panel" style="display: none;">
+            <div class="admin-card glow-card">
+                <h2>⚙️ Admin Panel</h2>
+                <p>Add new changelogs and news easily</p>
+                
+                <div class="admin-tabs">
+                    <button class="admin-tab-btn active" data-admin-tab="add-changelog">Add Changelog</button>
+                    <button class="admin-tab-btn" data-admin-tab="add-news">Add News</button>
+                </div>
+
+                <!-- Add Changelog Form -->
+                <div id="addChangelog" class="admin-form active">
+                    <form id="changelogForm">
+                        <div class="form-group">
+                            <label for="clVersion">Version</label>
+                            <input type="text" id="clVersion" placeholder="e.g., 1.0.0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="clDate">Date</label>
+                            <input type="date" id="clDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="clType">Type</label>
+                            <select id="clType">
+                                <option value="feature">✨ Feature</option>
+                                <option value="improvement">🚀 Improvement</option>
+                                <option value="bugfix">🐛 Bug Fix</option>
+                                <option value="security">🔒 Security</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="clTitle">Title</label>
+                            <input type="text" id="clTitle" placeholder="Brief title of the change" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="clDescription">Description</label>
+                            <textarea id="clDescription" rows="4" placeholder="Detailed description of the change" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="clSource">Source</label>
+                            <select id="clSource">
+                                <option value="web">🌐 Web</option>
+                                <option value="bot">🤖 Bot</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add Changelog</button>
+                    </form>
+                </div>
+
+                <!-- Add News Form -->
+                <div id="addNews" class="admin-form">
+                    <form id="newsForm">
+                        <div class="form-group">
+                            <label for="newsTitle">Title</label>
+                            <input type="text" id="newsTitle" placeholder="News title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="newsDate">Date</label>
+                            <input type="date" id="newsDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="newsCategory">Category</label>
+                            <select id="newsCategory">
+                                <option value="announcement">📢 Announcement</option>
+                                <option value="event">🎉 Event</option>
+                                <option value="update">🔄 Update</option>
+                                <option value="community">👥 Community</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="newsContent">Content</label>
+                            <textarea id="newsContent" rows="6" placeholder="Full news content" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="newsImage">Image URL (optional)</label>
+                            <input type="url" id="newsImage" placeholder="https://example.com/image.png">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add News</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="bottom-nav-item">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-label">Home</span>
+        </a>
+        <a href="index.html#stats" class="bottom-nav-item">
+            <span class="nav-icon">📊</span>
+            <span class="nav-label">Stats</span>
+        </a>
+        <a href="updates.html" class="bottom-nav-item active">
+            <span class="nav-icon">📰</span>
+            <span class="nav-label">Updates</span>
+        </a>
+        <a href="index.html#twitch" class="bottom-nav-item">
+            <span class="nav-icon">🎮</span>
+            <span class="nav-label">Twitch</span>
+        </a>
+        <a href="#" class="bottom-nav-item admin-only" id="adminPanelNav" style="display: none;">
+            <span class="nav-icon">⚙️</span>
+            <span class="nav-label">Admin</span>
+        </a>
+    </nav>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text animated-text" id="footerText">
+                Made with ❤️ for the Team Darkness community.
+            </p>
+            <p class="footer-version">Version <span id="footerVersion">1.0.0</span></p>
+        </div>
+    </footer>
+
+    <script src="config.js"></script>
+    <script src="updates.js"></script>
+</body>
+</html>
